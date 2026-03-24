@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Program - RLabz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0b172a;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            background-image: radial-gradient(circle at top right, rgba(11, 83, 148, 0.15) 0%, transparent 60%);
+        }
+
+        .internship-container {
+            max-width: 940px;
+            width: 100%;
+            background: rgba(0, 11, 36, 0.78);
+            border: 1px solid rgba(37, 99, 235, 0.35);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .brand-logo {
+            margin-bottom: 25px;
+            width: 80px;
+        }
+
+        .internship-header {
+            margin-bottom: 30px;
+        }
+
+        .internship-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .internship-title span {
+            color: #60a5fa;
+        }
+
+        .internship-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .detail-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .detail-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: #60a5fa;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-card h3 i {
+            color: #d6aa31;
+            font-size: 1.1rem;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-item i {
+            color: #10B981;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .overview-text {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            text-align: center;
+            max-width: 750px;
+            background: rgba(11, 83, 148, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .poster-wrapper {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .poster-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .register-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #0b5394, #2563eb);
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -10px rgba(11, 83, 148, 0.8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -10px rgba(11, 83, 148, 0.9);
+            color: #ffffff;
+        }
+
+        .register-btn:hover::before {
+            left: 100%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            margin-top: 35px;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .internship-container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .internship-title {
+                font-size: 2.2rem;
+            }
+
+            .register-btn {
+                padding: 15px 35px;
+                font-size: 1.05rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .poster-wrapper {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="internship-container">
+        <img src="images/rz-logo.webp" alt="RLabz Logo" class="brand-logo">
+
+        <div class="internship-header">
+            <h1 class="internship-title">Start Your <span>Journey</span></h1>
+            <p class="internship-subtitle">Join the RLabZ Full Stack Development Internship Program. Gain hands-on
+                experience and build real-world projects.</p>
+        </div>
+
+        <div class="poster-wrapper">
+            <img src="images/internship poster.png" alt="Full Stack Development Internship Poster">
+        </div>
+
+
+        <div class="details-grid">
+            <!-- Card 1: Key Information -->
+            <div class="detail-card">
+                <h3><i class="fa-solid fa-circle-info"></i> Key Information</h3>
+                <ul class="detail-list">
+                    <li class="detail-item"><i class="fa-solid fa-check"></i>
+                        <div><strong>Duration:</strong> 20 Days</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-check"></i>
+                        <div><strong>Mode:</strong> OFFLINE</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-check"></i>
+                        <div><strong>Fee:</strong> 5000 Rs</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-check"></i>
+                        <div><strong>Seats Available:</strong> 40 </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Tech & Eligibility -->
+            <div class="detail-card">
+                <h3><i class="fa-solid fa-code"></i> Eligibility & Tech</h3>
+                <ul class="detail-list">
+                    <li class="detail-item"><i class="fa-solid fa-laptop-code"></i>
+                        <div><strong>Tech Stack:</strong> HTML, CSS, JS (Tailwind) + Django + PostgreSQL</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-user-graduate"></i>
+                        <div><strong>Eligibility:</strong> B.Sc CS, BCA, IMCA, and other CS based degrees</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Working Hours -->
+            <div class="detail-card">
+                <h3><i class="fa-solid fa-clock"></i> Working Hours</h3>
+                <ul class="detail-list">
+                    <li class="detail-item"><i class="fa-regular fa-clock"></i>
+                        <div><strong>Timing:</strong> 9:30 AM – 4:30 PM</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-regular fa-calendar-check"></i>
+                        <div><strong>Total:</strong> 20 Working Days</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-clipboard-user"></i>
+                        <div>Attendance will be recorded daily.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Outcomes -->
+            <div class="detail-card">
+                <h3><i class="fa-solid fa-award"></i> Certification & Outcomes</h3>
+                <ul class="detail-list">
+                    <li class="detail-item"><i class="fa-solid fa-certificate"></i>
+                        <div>Internship Certificate & Experience Certificate upon completion.</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-rocket"></i>
+                        <div>Develop & Deploy a Full Capstone Project.</div>
+                    </li>
+                    <li class="detail-item"><i class="fa-solid fa-briefcase"></i>
+                        <div>Gain Hands-on Experience with RLabZ Projects.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Updated register link -->
+        <a href="https://forms.gle/kGmi6MaWBJyWiRuT6" target="_blank" class="register-btn" id="register-link">
+            Register Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Return to Homepage
+        </a>
+    </div>
+
+    <!-- Script to potentially add form URL later if needed -->
+    <script>
+        // You can easily update this link via javascript here if needed:
+        // document.getElementById('register-link').href = "https://forms.gle/XYZ";
+    </script>
+</body>
+
+</html>
